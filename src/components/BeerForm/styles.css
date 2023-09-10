@@ -1,0 +1,9 @@
+.custom-modal .modal-header,
+.custom-modal .modal-footer {
+  border: none;
+}
+
+.image {
+  height: 120px;
+  border: 1px solid #ccc;
+}

@@ -1,0 +1,23 @@
+.empty-state {
+  background-color: #ccc;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: calc(100vh - 10em);
+}
+
+.add-beer-link {
+  cursor: pointer;
+  color: blue;
+  font-weight: bold;
+  text-decoration: underline;
+  margin-top: 10px;
+}
+
+.empty-state p:not(.add-beer-link) {
+  color: #000;
+  font-weight: normal;
+  margin: 0;
+}

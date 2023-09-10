@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
 
-function App() {
+import BeerList from './containers/BeerList';
+import MyBeers from './containers/MyBeers';
+import Tabs, { TabEnum } from './components/Tabs';
+
+const App = () => {
+  const [activeTab, setActiveTab] = useState<TabEnum>(TabEnum.All);
+
+  const handleTabChange = (tab: TabEnum) => {
+    setActiveTab(tab);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container className='mt-4'>
+      <Tabs activeTab={activeTab} onTabChange={handleTabChange} />
+      <Row>
+        <Col>
+          <div className='tab-content'>
+            {activeTab === TabEnum.All && <BeerList />}
+            {activeTab === TabEnum.My && <MyBeers />}
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,9 @@
+.beer-list {
+  margin-bottom: 2em;
+}
+
+.load-more-text {
+  color: blue;
+  cursor: pointer;
+  font-weight: bold;
+}
